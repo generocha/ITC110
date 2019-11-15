@@ -18,14 +18,14 @@ def interestRate():
 # calcaulate the interest and inkove the functions initialAmount and interestRate
 def calculateInterest():
     years = 0
+    total = 0
     amount = initialAmount()
     rate = interestRate()
-    ratePercent = rate * .01
-    double = amount * amount
+    ratePercent = rate/100
     # until the amount is doubled add the yearly rate percent to the amount and increment the year
-    while amount < double:
-        amount = amount + (amount * ratePercent)
-        years += 1
+    while total < amount * 2:
+        total = amount * (1 + ratePercent)** years
+        years = years + 1
     return(years)
 # invoke the function calculateInterest and return the result
 def main():

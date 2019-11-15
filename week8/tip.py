@@ -9,9 +9,9 @@ Gene Rocha
 '''
 class Tip:
     def __init__(self,charge,tip,tax):
-        self.charge = charge
-        self.tip = tip
-        self.tax = tax
+        self.charge = float(charge)
+        self.tip = float(tip)
+        self.tax = float(tax)
 
     # accesor methods
 
@@ -28,11 +28,11 @@ class Tip:
 
     # calculate the tip amount
     def setTip(self):
-        tip = self.getTip()/100 * self.getCharge()
+        tip = self.getTip() * self.getCharge()
         return tip
     # calculate the tax amount
     def setTax(self):
-        tax = self.getCharge() * self.getTax()/100
+        tax = self.getCharge() * self.getTax()
         return tax
     # calculate the total
     def total(self):
@@ -40,10 +40,10 @@ class Tip:
         return total
     # return the tip, tax, total and format
     def __repr__(self):
-        return "The tip amount is ${0}, the tax is ${1} and the total is ${2}".format(self.setTip(), self.setTax(), self.total())
+        return "The tip amount is ${0:.2f}, the tax is ${1:.2f} and the total is ${2:.2f}".format(self.setTip(), self.setTax(), self.total())
 
 def main():
-    c1 = Tip(35,20,10)
+    c1 = Tip(35,.10,.10)
     print(c1)
 
 main()
