@@ -29,34 +29,35 @@ def intro():
     print("are too high,too low, or correct. Each time you play you get")
     print("10 points. Each wrong guess 1 point is substracted.")
     print("---------------------------------------")
-# 
+# accesor methods
 def getRandom():
     number = randrange(1,1001)
     return number
 def getUserGuess():
     guess = int(input("Enter a guess between 1 - 1000: "))
     return guess
-# 
-def evulateGuess(number, guess,score):
+# mutator methods
+# evulateGuess function and pass the number, guess and score
+def evulateGuess(number,guess,score):
     state = 0
-    if guess > number:
+    if guess > number: # The guess is too high
         print("Guess is too high. You have", score -1, "more guesses")
-    elif guess < number:
+    elif guess < number: # The guess is too low
         print("Guess is too low. You have", score -1, "more guesses")
-    else:
+    else: # Guess is correct
         print("Congratulations, you got it!")
         state = 1
         return state
 def play():
     number = getRandom()
-    score = 10
+    score = 10 # set the score to 10
     for i in range(1,11):
         guess = getUserGuess()
-        state = evulateGuess(number,guess,score)
+        state = evulateGuess(number,guess,score) # invoke the evulateGuess and pass the prams
         if state == 1:
             break
         score = score -1
-    return score,number
+    return score,number 
 def game():
     choice = 'y'
     scores = []
