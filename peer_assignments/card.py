@@ -2,6 +2,8 @@
 This class represents a playing card
 it will contain a number
 and suit
+Gene Rocha
+12/2/2019
 '''
 class Card():
     # Class initiallization. Pass in
@@ -53,6 +55,3 @@ class Card():
         if self.rank == 13:
             self.name = 'The King of ' + self.getSuit()
         return self.name
-
-
-    
