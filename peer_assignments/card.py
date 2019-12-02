@@ -1,7 +1,6 @@
 '''
 This class represents a playing card
-it will contain a number
-and suit
+it will contain a number and suit
 Gene Rocha
 12/2/2019
 '''
